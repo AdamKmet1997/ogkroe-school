@@ -30,3 +30,6 @@ def delete(request,id):
     video = Video.objects.get(id=id)
     video.delete()
     return HttpResponseRedirect(reverse(index))
+
+def rules(request):
+    return render(request,"school/rules.html")
