@@ -1,10 +1,12 @@
 {% load embed_video_tags %}
 {% load static %}
+{% include "school/nav.html" %}
 
 <!DOCTYPE html>
 <html>
 	<body>
-        {% if user.is_authenticated %}
+        {% block navigation %}
+        {% endblock %}
             {% for i in video %}
                 <div class="video-box">
                     <div class="video-box-title">
@@ -21,8 +23,6 @@
                     </div>
             </div>
             {% endfor%}
-        {% else %}
-        Click <a href="{% url 'signup' %}">here</a> to create a new account, or <a href="{% url 'login' %}">here</a> to login!
-        {% endif %}
+
 	</body>
 </html> 

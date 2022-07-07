@@ -1,3 +1,5 @@
+{% load static %}
+{% include "school/nav.html" %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +70,8 @@ a {
 </style>
 </head>
 <body>
-
+  {% block navigation %}
+  {% endblock %}
 <form action="" method="post">
   <div class="container">
     <h1>Register</h1>
