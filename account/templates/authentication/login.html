@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  {% block navigation %}
+{% endblock %}
+    
+    <form action="" method="post" >
+        {% csrf_token %}
+        <label for="message">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="message">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+
+        <input type="submit" class="submit" value="Log in">
+    </form>
+
+</body>
+</html>

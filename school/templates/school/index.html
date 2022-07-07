@@ -1,0 +1,28 @@
+{% load embed_video_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<body>
+        {% if user.is_authenticated %}
+            {% for i in video %}
+                <div class="video-box">
+                    <div class="video-box-title">
+                    <h3>{{i.title}}</h3>
+                    </div>
+                    <div class="video-box-content">   
+                        {% video i.url '426x240' %} <br>    
+                    </div>
+                    <div class="video-box-description">
+                        <p>{{i.description}}</p>
+                    </div>
+                    <div class="video-box-delete">
+                        <a href="{% url 'delete' i.id %}">Delete</a>
+                    </div>
+            </div>
+            {% endfor%}
+        {% else %}
+        Click <a href="{% url 'signup' %}">here</a> to create a new account, or <a href="{% url 'login' %}">here</a> to login!
+        {% endif %}
+	</body>
+</html> 
