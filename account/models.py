@@ -28,6 +28,7 @@ class AccountManager(BaseUserManager):
             password=password
         )
         user.is_admin = True
+        user.is_staff = True
         user.save(using=self._db)
         return user
 
@@ -36,6 +37,7 @@ class User(AbstractBaseUser):
     username = models.CharField(max_length=200,unique=True)
     password = models.CharField(max_length=200)
     is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
     objects = AccountManager()
 
@@ -47,3 +49,10 @@ class User(AbstractBaseUser):
 
     def has_perm(self,perm,obj=None):
         return self.is_admin
+
+    def has_perm(self, perm, obj=None):
+        return self.is_admin
+
+    def has_module_perms(self, app_label):
+        return self.is_admin
+    
