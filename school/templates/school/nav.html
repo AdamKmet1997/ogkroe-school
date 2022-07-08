@@ -37,11 +37,13 @@
     
     <div class="topnav">
         <a href="/academy">Academy</a>
+        {% if user.is_authenticated %}
+        <a href="/academy/add">New Video</a>
+        {% endif %}
         <a href="/academy/results">Results</a>
         <a href="/academy/history">History</a>
         <a href="/academy/rules">Rules</a>
       {% if user.is_authenticated %}
-        <a href="/academy/add">New Video</a>
         <a href="{% url 'logout' %}">Log Out</a>
       {% else %}
         <a href="/account/signup">Register</a>
