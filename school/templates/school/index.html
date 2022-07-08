@@ -30,7 +30,7 @@
               .video-box-description {
                 margin-left: 5em;
               }
-              .video-box-delete{
+              .video-box-delete {
                 background-color: red;
                 border-radius: 10px;
                 color: white;
@@ -41,10 +41,31 @@
                 margin-left: 5em;
                 {% comment %} box-shadow: 2px 5px black; {% endcomment %}
               }
-
+              .add-more-videos {
+                background-color: green;
+                border-radius: 10px;
+                padding: 10px 10px;
+                width:70px;
+                height:20px;
+                margin-left: 18.5em;
+                margin-bottom:1em;
+              }
+              .add-more-videos a {
+                color: white;
+                text-decoration: none;
+              }
+              .video-box-delete a {
+                color: white;
+                text-decoration: none;
+              }
         </style>
         {% block navigation %}
         {% endblock %}
+        {% if user.is_authenticated %}
+        <div class="add-more-videos">
+            <a href="/academy/add">Add More</a>
+        </div>
+        {% endif %}
         <div class="video-box">
             {% for i in video %}
                 <div class="video-box-content">
