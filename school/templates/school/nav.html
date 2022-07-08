@@ -9,15 +9,18 @@
     .topnav {
       overflow: hidden;
       background-color: #333;
+      text-align: center;
+      height: 50px;
+      margin-bottom: 3em;
     }
     
     .topnav a {
-      float: left;
       color: #f2f2f2;
       text-align: center;
-      padding: 14px 16px;
+      padding: 20px 25px;
+      {% comment %} padding: 14px 16px 14px 16px; {% endcomment %}
       text-decoration: none;
-      font-size: 17px;
+      font-size: 25px;
     }
     
     .topnav a:hover {
@@ -34,17 +37,19 @@
     <body>
     
     <div class="topnav">
-        <a href="/school">School</a>
-        <a href="/ogkroe">OGKROE channel</a>
-        <a href="/school/rules">OGKROE Rules</a>
+        <a href="/academy">Academy</a>
+        <a href="/youtube">Youtube</a>
+        <a href="/results">Results</a>
+        <a href="/history">History</a>
+        <a href="/academy/rules">Rules</a>
       {% if user.is_authenticated %}
-        <a href="/school/add">New Video</a>
+        <a href="/academy/add">New Video</a>
         <a href="{% url 'logout' %}">Log Out</a>
       {% else %}
         <a href="/account/signup">Register</a>
         <a href="{% url 'login' %}">Log In</a>
       {% endif %}
-
+      <a href="/about">About us</a>
     </div>
 
 {% endblock %}
