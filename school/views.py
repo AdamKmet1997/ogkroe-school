@@ -33,3 +33,12 @@ def delete(request,id):
 
 def rules(request):
     return render(request,"school/rules.html")
+
+def results(request):
+    return render(request,"school/results.html")
+
+def history(request):
+    return render(request,"school/history.html")
+
+def about(request):
+    return render(request,"school/about.html")
