@@ -7,12 +7,13 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.timezone import now
 from django.contrib.auth import authenticate, login
 
-
 def index(request):
+    return render(request,"school/index.html")
+
+def academy(request):
     videos = Video.objects.filter(added__lte=now())
     context={"video":videos}
-    # print(videos)
-    return render(request,"school/index.html",context)
+    return render(request,"school/academy.html",context)
 
 def add(request):
     if request.method == "POST":

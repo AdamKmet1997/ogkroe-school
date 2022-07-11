@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'school',
     'account',
-    'ogkroe_youtube',
     'embed_video',
     'django.contrib.admin',
     'django.contrib.auth',

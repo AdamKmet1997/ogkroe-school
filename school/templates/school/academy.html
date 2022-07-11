@@ -1,0 +1,44 @@
+{% comment %} {% extends "school/index.html" %} {% endcomment %}
+
+{% load embed_video_tags %}
+{% load static %}
+{% include "school/nav.html" %}
+{% include "school/footer.html" %}
+<!DOCTYPE html>
+<html>
+
+	<body>
+        <link rel="stylesheet" type="text/css" href="{% static 'school/school.css' %}">
+
+        {% block navigation %} {% endblock %}
+
+        {% block academy %}
+        {% if user.is_authenticated %}
+        <div class="add-more-videos">
+            <a href="/academy/add">Add More</a>
+        </div>
+        {% endif %}
+        <div class="video-box">
+            {% for i in video %}
+                <div class="video-box-content">
+                    <div class="video-box-title">
+                        <h3>{{i.title}}</h3>
+                    </div>
+                    <div class="video-box-video">   
+                        {% video i.url '426x240' %} <br>    
+                    </div>
+                    <div class="video-box-description">
+                        <p>{{i.description}}</p>
+                    </div>
+                    <div class="video-box-delete">
+                        <a href="{% url 'delete' i.id %}">Delete</a>
+                    </div>
+                </div>            
+            {% endfor%}
+        </div>
+        {% endblock %}
+
+        {% block footer %}{% endblock %}
+        
+	</body>
+</html> 

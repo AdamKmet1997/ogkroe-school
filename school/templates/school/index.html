@@ -1,88 +1,17 @@
-{% load embed_video_tags %}
 {% load static %}
 {% include "school/nav.html" %}
+{% include "school/footer.html" %}
 
 <!DOCTYPE html>
 <html>
 
 	<body>
-        <style>
-            .video-box {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            } 
-            .video-box-content {
-                {% comment %} margin-left: 10em; {% endcomment %}
-                
-                width: 33%;
-                padding: 10px;
-                border: 5px solid gray;
-                {% comment %} margin: 10; {% endcomment %}
-              }
-              .video-box-video {
-                margin-left: 5em;
-                
-              }
-              .video-box-title {
-                margin-left: 5em;
-              }
-              .video-box-description {
-                margin-left: 5em;
-              }
-              .video-box-delete {
-                background-color: red;
-                border-radius: 10px;
-                color: white;
-                padding: 10px 10px;
-                text-decoration: none;
-                width:50px;
-                height:20px;
-                margin-left: 5em;
-                {% comment %} box-shadow: 2px 5px black; {% endcomment %}
-              }
-              .add-more-videos {
-                background-color: green;
-                border-radius: 10px;
-                padding: 10px 10px;
-                width:70px;
-                height:20px;
-                margin-left: 18.5em;
-                margin-bottom:1em;
-              }
-              .add-more-videos a {
-                color: white;
-                text-decoration: none;
-              }
-              .video-box-delete a {
-                color: white;
-                text-decoration: none;
-              }
-        </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'school/school.css' %}">
+
         {% block navigation %}
         {% endblock %}
-        {% if user.is_authenticated %}
-        <div class="add-more-videos">
-            <a href="/academy/add">Add More</a>
-        </div>
-        {% endif %}
-        <div class="video-box">
-            {% for i in video %}
-                <div class="video-box-content">
-                    <div class="video-box-title">
-                        <h3>{{i.title}}</h3>
-                    </div>
-                    <div class="video-box-video">   
-                        {% video i.url '426x240' %} <br>    
-                    </div>
-                    <div class="video-box-description">
-                        <p>{{i.description}}</p>
-                    </div>
-                    <div class="video-box-delete">
-                        <a href="{% url 'delete' i.id %}">Delete</a>
-                    </div>
-                </div>            
-            {% endfor%}
-        </div>
+
+        
+        {% block footer %}{% endblock %}
 	</body>
 </html> 
