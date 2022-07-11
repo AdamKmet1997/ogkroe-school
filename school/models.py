@@ -15,3 +15,9 @@ class Video(models.Model):
     
     class Meta:
         ordering = ['-added']
+        
+class Results(models.Model):
+    track_name = models.CharField(max_length=100)
+    tier_number = models.IntegerField()
+    date_raced = models.DateField()
+    results_image = models.ImageField(upload_to='school/results/')
