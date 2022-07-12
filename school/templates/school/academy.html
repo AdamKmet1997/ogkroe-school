@@ -15,12 +15,15 @@
         {% block academy %}
         {% if user.is_authenticated %}
         <div class="add-more-videos">
-            <a href="/academy/add">Add More</a>
+            <a href="{% url 'add' %}">Add More</a>
         </div>
         {% endif %}
         <div class="video-box">
             {% for i in video %}
                 <div class="video-box-content">
+                    <div class="video-box-author">
+                        <h3>Submitted by: {{user}}</h3>
+                    </div>
                     <div class="video-box-title">
                         <h3>{{i.title}}</h3>
                     </div>

@@ -37,7 +37,7 @@
     
     <div class="topnav">
       <a href="{% url 'index' %}">Home</a>
-        <a href="/academy/">Academy</a>
+        <a href="{% url 'academy' %}">Academy</a>
         {% comment %} {% if user.is_authenticated %}
         <a href="/academy/add">New Video</a>
         {% endif %} {% endcomment %}
