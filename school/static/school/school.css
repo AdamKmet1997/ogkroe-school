@@ -81,3 +81,52 @@ body {
     color: white;
     text-decoration: none;
 }
+
+
+/* result */
+
+.results-box {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    padding-bottom: 1rem;
+}
+
+.results-box-content {
+    width: 45%;
+    padding: 5px;
+    border: 5px solid gray;
+}
+
+.results-box-title {
+    margin-left: 1em;
+}
+
+.results-box-tier_number {
+    margin-left: 1em;
+}
+
+.results-box-date_raced {
+    margin-left: 1em;
+}
+
+.results-box-delete {
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    width: 50px;
+    height: 20px;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.results-box-results_image {
+    margin-left: 1em;
+}
+
+.results-box-delete a {
+    color: white;
+    text-decoration: none;
+}

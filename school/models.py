@@ -21,3 +21,5 @@ class Results(models.Model):
     tier_number = models.IntegerField()
     date_raced = models.DateField()
     results_image = models.ImageField(upload_to='results_images/',null = False, blank = False)
+
+ 

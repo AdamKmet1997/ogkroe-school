@@ -6,6 +6,37 @@
 <html>
 
 	<body>
+		<link rel="stylesheet" type="text/css" href="{% static 'school/school.css' %}">
 
+		{% if user.is_authenticated %}
+			<form action="/results/" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+
+				{{results_form}}
+				<input type="submit" value="Submit">
+			</form>
+		{% endif%}
+		<div class="results-box">		
+            {% for result in results %}
+                <div class="results-box-content">
+                    <div class="results-box-title">
+                        <h3>{{result.track_name}}</h3>
+                    </div>
+                    <div class="results-box-tier_number">   
+                        <h3>Tier {{result.tier_number}}</h3>   
+                    </div>
+                    <div class="results-box-date_raced">
+                        <p><b>Date: </b>{{result.date_raced}}</p>
+                    </div>
+					<div class="results-box-results_image">
+                        <img src="{{result.results_image.url}}" alt="Results of {{result.track_name}}">
+                    </div>
+                    <div class="results-box-delete">
+                        <a href="{% url 'delete_results' result.id %}">Delete</a>
+                    </div>
+                </div>            
+            {% endfor%}
+        </div>
+		  
 	</body>
 </html> 
