@@ -1,8 +1,26 @@
 {% block footer %}
+<script src="https://kit.fontawesome.com/7973320f11.js" crossorigin="anonymous"></script>
 
 <footer class="footer">
-    <p>Author: Hege Refsnes</p>
-    <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+    <div id="footer-menu">
+        <ul>
+        <li><a href="{% url 'academy' %}">Academy</a></li>
+        <li><a href="{% url 'results' %}">Results</a></li>
+        <li><a href="{% url 'history' %}">History</a></li>
+        <li><a href="{% url 'rules' %}">Rules</a></li>
+        <li><a href="{% url 'about' %}">Contact us</a></li>
+        </ul>
+    </div>    
+    <div>
+         <p style='margin-bottom: 0'>© All rights reserved</p>
+    </div>
+    <div class="footer-socials">
+
+        <a href='//instagram.com' style='padding: 10px;'><i class="fa-brands fa-instagram"></i></a> 
+        <a href='//youtube.com' style='padding: 10px;'><i class="fa-brands fa-youtube"></i></a> 
+        <a href='//discord.com' style='padding: 10px;'><i class="fa-brands fa-discord"></i></a>
+    </div>
+
 </footer>
 
 {% endblock%}

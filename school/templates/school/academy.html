@@ -3,7 +3,7 @@
 {% load embed_video_tags %}
 {% load static %}
 {% include "school/nav.html" %}
-{% include "school/footer.html" %}
+
 <!DOCTYPE html>
 <html>
 
@@ -41,7 +41,7 @@
         </div>
         {% endblock %}
 
-        {% block footer %}{% endblock %}
+        {% include "school/footer.html" %}
         
 	</body>
 </html> 
