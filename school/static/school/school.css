@@ -42,7 +42,8 @@ body {
 /* academy */
 
 .video-box {
-    min-height: 70%;
+    /* min-height: 70%; */
+    /* width: 10%; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -84,7 +85,7 @@ body {
     padding: 10px 10px;
     width: 70px;
     height: 20px;
-    margin-left: 18.5em;
+    margin-left: 9.5em;
     margin-bottom: 1em;
 }
 
