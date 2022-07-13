@@ -77,30 +77,30 @@ WSGI_APPLICATION = 'ogkroe_school.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 # HEROKU DATABSE INFORMATION
-# DATABASES = {
-
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME':'d6f2m0uevfmknl',
-#         'USER': 'lcvlwhptfdbcmx',
-#         'PASSWORD': 'dac6de250e4c7e99d81f0c46cd9569e59f8115fa8a27768a46aff1b2b7353575',
-#         'HOST': 'ec2-34-248-169-69.eu-west-1.compute.amazonaws.com',
-#         'PORT': '5432',
-#     }
-
-# }
 DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'Angie1997',
-        'HOST': 'localhost',
+        'NAME':'d6f2m0uevfmknl',
+        'USER': 'lcvlwhptfdbcmx',
+        'PASSWORD': 'dac6de250e4c7e99d81f0c46cd9569e59f8115fa8a27768a46aff1b2b7353575',
+        'HOST': 'ec2-34-248-169-69.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 
 }
+# DATABASES = {
+
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Angie1997',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+
+# }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
