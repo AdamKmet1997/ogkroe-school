@@ -141,3 +141,5 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = ''
+
+CSRF_TRUSTED_ORIGINS = ['https://ogkroe.herokuapp.com/']
