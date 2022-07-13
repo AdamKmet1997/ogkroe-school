@@ -2,6 +2,7 @@ from django.db import models
 from embed_video.fields import EmbedVideoField
 from django.utils.timezone import now
 from sqlalchemy import null
+from .utils import get_file_path
 
 
 class Video(models.Model):
@@ -20,6 +21,6 @@ class Results(models.Model):
     track_name = models.CharField(max_length=100)
     tier_number = models.IntegerField()
     date_raced = models.DateField()
-    results_image = models.ImageField(upload_to='results_images/', null=False, blank=False)
+    results_image = models.ImageField(upload_to=get_file_path, null=False, blank=False)
 
  
