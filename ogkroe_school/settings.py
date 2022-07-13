@@ -76,7 +76,19 @@ WSGI_APPLICATION = 'ogkroe_school.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+# HEROKU DATABSE INFORMATION
+DATABASES = {
 
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'d6f2m0uevfmknl',
+        'USER': 'lcvlwhptfdbcmx',
+        'PASSWORD': 'dac6de250e4c7e99d81f0c46cd9569e59f8115fa8a27768a46aff1b2b7353575',
+        'HOST': 'dac6de250e4c7e99d81f0c46cd9569e59f8115fa8a27768a46aff1b2b7353575',
+        'PORT': '5432',
+    }
+
+}
 # DATABASES = {
 
 #     'default': {
@@ -89,12 +101,12 @@ WSGI_APPLICATION = 'ogkroe_school.wsgi.application'
 #     }
 
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
