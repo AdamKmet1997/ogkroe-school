@@ -20,6 +20,6 @@ class Results(models.Model):
     track_name = models.CharField(max_length=100)
     tier_number = models.IntegerField()
     date_raced = models.DateField()
-    results_image = models.ImageField(upload_to='results_images/',null = False, blank = False)
+    results_image = models.ImageField(upload_to='results_images/', null=False, blank=False)
 
  

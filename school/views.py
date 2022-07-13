@@ -64,7 +64,7 @@ def results(request):
 def delete_results(request,id):
     results = Results.objects.get(id=id)
     results.delete()
-    return HttpResponseRedirect(reverse(results))
+    return HttpResponseRedirect(reverse("results"))
 
 def history(request):
     return render(request,"school/history.html")
