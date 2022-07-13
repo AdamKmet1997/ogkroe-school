@@ -40,4 +40,3 @@ def user_login(request):
             raise Http404()
 
     return render(request, "authentication/login.html",context)
-    
