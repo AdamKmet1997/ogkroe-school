@@ -16,6 +16,8 @@ def index(request):
 @xframe_options_exempt
 def academy(request):
     videos = Video.objects.filter(added__lte=now())
+    for vid in videos:
+        vid.clean_url = vid.url.split('v=')[1]
     context={"video":videos}
     return render(request,"school/academy.html",context)
 

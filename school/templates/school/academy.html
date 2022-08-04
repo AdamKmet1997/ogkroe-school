@@ -24,8 +24,8 @@
                     <div class="video-box-title">
                         <h3>{{i.title}}</h3>
                     </div>
-                    <div class="video-box-video">   
-                        {% video i.url '426x240' %} <br>    
+                    <div class="video-box-video">
+                        <iframe width="426" height="240" src="https://www.youtube.com/embed/{{ i.clean_url }}"></iframe>
                     </div>
                     <div class="video-box-description">
                         <p>{{i.description}}</p>
