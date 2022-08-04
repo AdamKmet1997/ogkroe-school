@@ -1,44 +1,33 @@
-{% comment %} {% extends "school/index.html" %} {% endcomment %}
+{% extends 'school/base.html' %}
 
-{% load embed_video_tags %}
-{% load static %}
-{% include "school/nav.html" %}
+{% block content %}
 
-<!DOCTYPE html>
-<html>
+{% if user.is_authenticated %}
+    <a href="{% url 'add' %}" class="btn btn-success mt-5 mb-5" style="margin-left: 110px">Add More</a>
+{% endif %}
 
-	<body>
-        <link rel="stylesheet" type="text/css" href="{% static 'school/school.css' %}">
+<div class="d-flex justify-content-center align-items-center flex-wrap">
+    {% for i in video %}
+        <div class="card" style="margin-top: 2em; margin-bottom: 2em; margin-right: 2em;">
+            <div class="card-header">
+                {{i.title}}
+            </div>
 
-        {% block navigation %} {% endblock %}
+            <div class="card-body">
+                <p class="card-text">
+                    <iframe width="426" height="240" src="https://www.youtube.com/embed/{{ i.clean_url }}"></iframe>
+                </p>
+                
+                <p class="card-text">
+                    {{i.description}}
+                </p>
 
-        {% block academy %}
-        {% if user.is_authenticated %}
-        <div class="add-more-videos">
-            <a href="{% url 'add' %}">Add More</a>
-        </div>
-        {% endif %}
-        <div class="video-box">
-            {% for i in video %}
-                <div class="video-box-content">
-                    <div class="video-box-title">
-                        <h3>{{i.title}}</h3>
-                    </div>
-                    <div class="video-box-video">
-                        <iframe width="426" height="240" src="https://www.youtube.com/embed/{{ i.clean_url }}"></iframe>
-                    </div>
-                    <div class="video-box-description">
-                        <p>{{i.description}}</p>
-                    </div>
-                    <div class="video-box-delete">
-                        <a href="{% url 'delete' i.id %}">Delete</a>
-                    </div>
-                </div>            
-            {% endfor%}
-        </div>
-        {% endblock %}
+                {% if user.is_authenticated %}
+                    <a href="{% url 'delete' i.id %}" class="btn btn-danger w-100">Delete</a>
+                {% endif %}
+            </div>
+        </div>        
+    {% endfor%}
+</div>
 
-        {% include "school/footer.html" %}
-        
-	</body>
-</html> 
+{% endblock %}

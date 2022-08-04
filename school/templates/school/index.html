@@ -1,17 +1,7 @@
-{% load static %}
-{% include "school/nav.html" %}
-{% include "school/footer.html" %}
+{% extends 'school/base.html' %}
 
-<!DOCTYPE html>
-<html>
+{% block content %}
 
-	<body>
-    <link rel="stylesheet" type="text/css" href="{% static 'school/school.css' %}">
+Welcome to our website! It is stillunder construction! :(
 
-        {% block navigation %}
-        {% endblock %}
-
-        
-        {% block footer %}{% endblock %}
-	</body>
-</html> 
+{% endblock %}

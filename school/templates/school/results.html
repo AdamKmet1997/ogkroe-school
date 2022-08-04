@@ -1,42 +1,31 @@
-{% load embed_video_tags %}
-{% load static %}
-{% include "school/nav.html" %}
+{% extends 'school/base.html' %}
 
-<!DOCTYPE html>
-<html>
+{% block content %}
 
-	<body>
-		<link rel="stylesheet" type="text/css" href="{% static 'school/school.css' %}">
+{% if user.is_authenticated %}
+    <form action="/results/" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
 
-		{% if user.is_authenticated %}
-			<form action="/results/" method="post" enctype="multipart/form-data">
-				{% csrf_token %}
+		{{results_form}}
 
-				{{results_form}}
-				<input type="submit" value="Submit">
-			</form>
-		{% endif%}
-		<div class="results-box">		
-            {% for result in results %}
-                <div class="results-box-content">
-                    <div class="results-box-title">
-                        <h3>{{result.track_name}}</h3>
-                    </div>
-                    <div class="results-box-tier_number">   
-                        <h3>Tier {{result.tier_number}}</h3>   
-                    </div>
-                    <div class="results-box-date_raced">
-                        <p><b>Date: </b>{{result.date_raced}}</p>
-                    </div>
-					<div class="results-box-results_image">
-                        <img src="{{result.results_image_url}}" alt="Results of {{result.track_name}}">
-                    </div>
-                    <div class="results-box-delete">
-                        <a href="{% url 'delete_results' result.id %}">Delete</a>
-                    </div>
-                </div>            
-            {% endfor%}
-        </div>
-		  
-	</body>
-</html> 
+		<input type="submit" value="Submit">
+	</form>
+{% endif%}
+
+<div class="results-box mt-5">		
+    {% for result in results %}
+        <div class="card" style="width: 30rem;">
+            <img src="{{result.results_image_url}}" class="card-img-top" alt="Result for Tier {{result.tier_number}} - {{result.track_name}}">
+            <div class="card-body text-center">
+                <h5 class="card-title">Tier {{result.tier_number}} - {{result.track_name}}</h5>
+                <p class="card-text text-muted">{{result.date_raced}}</p>
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'delete_results' result.id %}" class="btn btn-danger w-100">Delete</a>
+                {% endif %}
+            </div>
+        </div>          
+    {% endfor%}
+</div>
+
+{% endblock %}
