@@ -18,6 +18,7 @@ def user_signup(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
         User.objects.create(email=email,username=username,password=make_password(password))
+        return render(request, "authentication/login.html")
     return render(request, "authentication/signup.html")
 
 @csrf_exempt 
