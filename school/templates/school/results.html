@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-    <form action="/results/" method="post" enctype="multipart/form-data">
+    <form action="/results/" method="post" enctype="multipart/form-data" class="mt-4">
 		{% csrf_token %}
 
 		{{results_form}}
