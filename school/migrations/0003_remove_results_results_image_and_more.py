@@ -7,17 +7,17 @@ import sqlalchemy.sql.expression
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('school', '0002_results'),
+        ("school", "0002_results"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='results',
-            name='results_image',
+            model_name="results",
+            name="results_image",
         ),
         migrations.AddField(
-            model_name='results',
-            name='results_image_url',
+            model_name="results",
+            name="results_image_url",
             field=models.URLField(default=sqlalchemy.sql.expression.null),
         ),
     ]

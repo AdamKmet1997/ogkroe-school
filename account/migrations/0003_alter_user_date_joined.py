@@ -7,13 +7,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('account', '0002_alter_user_date_joined'),
+        ("account", "0002_alter_user_date_joined"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='user',
-            name='date_joined',
-            field=models.DateTimeField(default=datetime.datetime(2022, 7, 7, 10, 21, 2, 472413), verbose_name='date joined'),
+            model_name="user",
+            name="date_joined",
+            field=models.DateTimeField(
+                default=datetime.datetime(2022, 7, 7, 10, 21, 2, 472413),
+                verbose_name="date joined",
+            ),
         ),
     ]

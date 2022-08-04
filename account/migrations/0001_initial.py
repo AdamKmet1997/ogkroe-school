@@ -8,24 +8,43 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='User',
+            name="User",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('email', models.EmailField(max_length=60, unique=True, verbose_name='email')),
-                ('username', models.CharField(max_length=200)),
-                ('password', models.CharField(max_length=200)),
-                ('date_joined', models.DateTimeField(default=datetime.datetime(2022, 7, 7, 10, 7, 48, 780794), verbose_name='date joined')),
-                ('last_login', models.DateTimeField(auto_now=True, verbose_name='last login')),
-                ('is_admin', models.BooleanField(default=False)),
-                ('is_online', models.BooleanField(default=False)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "email",
+                    models.EmailField(max_length=60, unique=True, verbose_name="email"),
+                ),
+                ("username", models.CharField(max_length=200)),
+                ("password", models.CharField(max_length=200)),
+                (
+                    "date_joined",
+                    models.DateTimeField(
+                        default=datetime.datetime(2022, 7, 7, 10, 7, 48, 780794),
+                        verbose_name="date joined",
+                    ),
+                ),
+                (
+                    "last_login",
+                    models.DateTimeField(auto_now=True, verbose_name="last login"),
+                ),
+                ("is_admin", models.BooleanField(default=False)),
+                ("is_online", models.BooleanField(default=False)),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]

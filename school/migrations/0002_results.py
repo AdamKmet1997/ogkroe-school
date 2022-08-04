@@ -6,18 +6,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('school', '0001_initial'),
+        ("school", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Results',
+            name="Results",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('track_name', models.CharField(max_length=100)),
-                ('tier_number', models.IntegerField()),
-                ('date_raced', models.DateField()),
-                ('results_image', models.ImageField(upload_to='results_images/')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("track_name", models.CharField(max_length=100)),
+                ("tier_number", models.IntegerField()),
+                ("date_raced", models.DateField()),
+                ("results_image", models.ImageField(upload_to="results_images/")),
             ],
         ),
     ]

@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('account', '0004_remove_user_date_joined_remove_user_is_online_and_more'),
+        ("account", "0004_remove_user_date_joined_remove_user_is_online_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='staff',
+            model_name="user",
+            name="staff",
             field=models.BooleanField(default=False),
         ),
     ]
