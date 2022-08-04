@@ -22,7 +22,7 @@ def user_signup(request):
         User.objects.create(
             email=email, username=username, password=make_password(password)
         )
-        return render(request, "authentication/login.html")
+        return redirect("login")
     return render(request, "authentication/signup.html")
 
 
