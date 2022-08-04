@@ -29,7 +29,7 @@
                         <p><b>Date: </b>{{result.date_raced}}</p>
                     </div>
 					<div class="results-box-results_image">
-                        <img src="{{result.results_image.url}}" alt="Results of {{result.track_name}}">
+                        <img src="{{result.results_image_url}}" alt="Results of {{result.track_name}}">
                     </div>
                     <div class="results-box-delete">
                         <a href="{% url 'delete_results' result.id %}">Delete</a>

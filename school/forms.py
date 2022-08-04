@@ -4,7 +4,7 @@ from .models import Results
 class ResultsForm(ModelForm):
     class Meta:
         model = Results
-        fields = ['track_name','tier_number','date_raced','results_image']
+        fields = ['track_name','tier_number','date_raced','results_image_url']
 
     # track_name = forms.CharField(label='Track name', max_length=100)
     # tier_number = forms.IntegerField(label='Tier Number')

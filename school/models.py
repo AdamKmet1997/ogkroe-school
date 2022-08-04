@@ -21,6 +21,6 @@ class Results(models.Model):
     track_name = models.CharField(max_length=100)
     tier_number = models.IntegerField()
     date_raced = models.DateField()
-    results_image = models.ImageField(upload_to=get_file_path, null=False, blank=False)
+    results_image_url = models.URLField(max_length = 200,default=null)
 
  
