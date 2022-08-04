@@ -7,10 +7,13 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.timezone import now
 from django.contrib.auth import authenticate, login
 from .forms import ResultsForm
+from django.views.decorators.clickjacking import xframe_options_exempt
+
 
 def index(request):
     return render(request,"school/index.html")
 
+@xframe_options_exempt
 def academy(request):
     videos = Video.objects.filter(added__lte=now())
     context={"video":videos}
