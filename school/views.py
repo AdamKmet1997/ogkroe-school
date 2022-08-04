@@ -24,7 +24,7 @@ def add(request):
 
         Video.objects.create(title=title,description=description,url=url)
 
-        return HttpResponseRedirect(reverse(index))
+        return HttpResponseRedirect(reverse(academy))
 
     return render(request,"school/add_video.html")
 
