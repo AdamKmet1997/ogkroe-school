@@ -42,7 +42,7 @@
         <a href="/academy/add">New Video</a>
         {% endif %} {% endcomment %}
         <a href="{% url 'results' %}">Results</a>
-        <a href="{% url 'history' %}">History</a>
+        {% comment %} <a href="{% url 'history' %}">History</a> {% endcomment %}
         <a href="{% url 'rules' %}">Rules</a>
       {% if user.is_authenticated %}
         <a href="{% url 'logout' %}">Log Out</a>
