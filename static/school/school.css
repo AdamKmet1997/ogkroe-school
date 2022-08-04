@@ -1,154 +1,148 @@
-html {
-    height: 100%;
-    box-sizing: border-box;
-}
-
-body {
-    position: relative;
-    /* padding-bottom: 6rem; */
-    min-height: 100%;
-}
-
-
-/*footer */
-
-.footer {
-    position: inherit;
-    height: 150px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 0.5rem;
-    /* background-color: #8a8686; */
-    text-align: center;
-}
-
-#footer-menu {
-    display: block;
-    margin-top: 15px;
-}
-
-#footer-menu ul li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.footer-socials {
-    display: block;
-    margin-top: 15px;
-}
-
-
-/* academy */
-
-.video-box {
-    /* min-height: 70%; */
-    /* width: 10%; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 1rem;
-}
-
-.video-box-content {
-    /* width: 33%; */
-    padding: 10px;
-    border: 5px solid gray;
-}
-
-.video-box-video {
-    margin-left: 5em;
-}
-
-.video-box-title {
-    margin-left: 5em;
-}
-
-.video-box-description {
-    margin-left: 5em;
-}
-
-.video-box-delete {
-    background-color: red;
-    border-radius: 10px;
-    color: white;
-    padding: 10px 10px;
-    text-decoration: none;
-    width: 50px;
-    height: 20px;
-    margin-left: 5em;
-}
-
-.add-more-videos {
-    background-color: green;
-    border-radius: 10px;
-    padding: 10px 10px;
-    width: 70px;
-    height: 20px;
-    margin-left: 9.5em;
-    margin-bottom: 1em;
-}
-
-.add-more-videos a {
-    color: white;
-    text-decoration: none;
-}
-
-.video-box-delete a {
-    color: white;
-    text-decoration: none;
-}
-
-
-/* result */
-
-.results-box {
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: center; */
-    padding-bottom: 1rem;
-}
-
-.results-box-content {
-    width: 45%;
-    padding: 5px;
-    border: 5px solid gray;
-}
-
-.results-box-title {
-    margin-left: 1em;
-}
-
-.results-box-tier_number {
-    margin-left: 1em;
-}
-
-.results-box-date_raced {
-    margin-left: 1em;
-}
-
-.results-box-delete {
-    background-color: red;
-    border-radius: 10px;
-    color: white;
-    padding: 10px 10px;
-    text-decoration: none;
-    width: 50px;
-    height: 20px;
-    margin-top: 1em;
-    margin-left: 1em;
-}
-
-.results-box-results_image {
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-.results-box-results_image img {
-    max-width: 100%;
-}
-
-.results-box-delete a {
-    color: white;
-    text-decoration: none;
-}
+    html {
+        height: 100%;
+        box-sizing: border-box;
+    }
+    
+    body {
+        position: relative;
+        /* padding-bottom: 6rem; */
+        min-height: 100%;
+    }
+    /*footer */
+    
+    .footer {
+        position: inherit;
+        height: 150px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 0.5rem;
+        /* background-color: #8a8686; */
+        text-align: center;
+    }
+    
+    #footer-menu {
+        display: block;
+        margin-top: 15px;
+    }
+    
+    #footer-menu ul li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    
+    .footer-socials {
+        display: block;
+        margin-top: 15px;
+    }
+    /* academy */
+    
+    .video-box {
+        /* min-height: 70%; */
+        /* width: 10%; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 1rem;
+    }
+    
+    .video-box-content {
+        /* width: 33%; */
+        padding: 10px;
+        border: 5px solid gray;
+    }
+    
+    .video-box-video {
+        margin-left: 5em;
+    }
+    
+    .video-box-title {
+        margin-left: 5em;
+    }
+    
+    .video-box-description {
+        margin-left: 5em;
+    }
+    
+    .video-box-delete {
+        background-color: red;
+        border-radius: 10px;
+        color: white;
+        padding: 10px 10px;
+        text-decoration: none;
+        width: 50px;
+        height: 20px;
+        margin-left: 5em;
+    }
+    
+    .add-more-videos {
+        background-color: green;
+        border-radius: 10px;
+        padding: 10px 10px;
+        width: 70px;
+        height: 20px;
+        margin-left: 9.5em;
+        margin-bottom: 1em;
+    }
+    
+    .add-more-videos a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .video-box-delete a {
+        color: white;
+        text-decoration: none;
+    }
+    /* result */
+    
+    .results-box {
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: center; */
+        padding-bottom: 1rem;
+    }
+    
+    .results-box-content {
+        width: 45%;
+        padding: 5px;
+        border: 5px solid gray;
+    }
+    
+    .results-box-title {
+        margin-left: 1em;
+    }
+    
+    .results-box-tier_number {
+        margin-left: 1em;
+    }
+    
+    .results-box-date_raced {
+        margin-left: 1em;
+    }
+    
+    .results-box-delete {
+        background-color: red;
+        border-radius: 10px;
+        color: white;
+        padding: 10px 10px;
+        text-decoration: none;
+        width: 50px;
+        height: 20px;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+    
+    .results-box-results_image {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    
+    .results-box-results_image img {
+        max-width: 100%;
+    }
+    
+    .results-box-delete a {
+        color: white;
+        text-decoration: none;
+    }

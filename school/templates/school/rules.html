@@ -1,18 +1,12 @@
-{% include "school/nav.html" %}
-<!DOCTYPE html>
-<html>
-	<body>
-        <style>
-            .rulebook-iframe {
-                width: 100%;
-                height: 100%;
-                tex-align: center;
-            }
-        </style>
+{% extends 'school/base.html' %} {% block content %}
+<div class="embed-responsive embed-responsive-21by9 mt-4">
+  <iframe
+    class="embed-responsive-item"
+    width="100%"
+    height="1500"
+    src="https://docs.google.com/document/d/e/2PACX-1vSu5y8G5fdXG2V7fZAExEXB89UKP-hIv7hkmMJhS1_iNEWye5RLixvy5fIhdCiAVnl54KM3O9yjMdjH/pub?embedded=true"
+  >
+  </iframe>
+</div>
 
-        <div class="rulebook-iframe">
-            <iframe width='100%' height='1500' src="https://docs.google.com/document/d/e/2PACX-1vSu5y8G5fdXG2V7fZAExEXB89UKP-hIv7hkmMJhS1_iNEWye5RLixvy5fIhdCiAVnl54KM3O9yjMdjH/pub?embedded=true"></iframe>
-        </div> 
-
-</body>
-</html> 
+{% endblock %}
