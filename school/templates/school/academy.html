@@ -1,6 +1,6 @@
 {% extends 'school/base.html' %} {% block content %} 
 
-{% if user.is_authenticated and IS_STAFF %}
+{% if user.is_authenticated and user.is_staff %}
 <a
   href="{% url 'add' %}"
   class="btn btn-success mt-5 mb-5"
@@ -28,7 +28,7 @@
 
       <p class="card-text">{{i.description}}</p>
 
-      {% if user.is_authenticated and IS_STAFF %}
+      {% if user.is_authenticated and user.is_staff %}
       <a href="{% url 'delete' i.id %}" class="btn btn-danger w-100">Delete</a>
       {% endif %}
     </div>

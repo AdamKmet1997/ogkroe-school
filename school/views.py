@@ -18,12 +18,9 @@ def index(request):
 def academy(request):
     videos = Video.objects.filter(added__lte=now())
     user = request.user
-    IS_STAFF = False
-    if user.staff_code == "champ":
-        IS_STAFF = True
     for vid in videos:
         vid.clean_url = vid.url.split("v=")[1]
-    context = {"video": videos, "IS_STAFF": IS_STAFF}
+    context = {"video": videos, "user": user}
     return render(request, "school/academy.html", context)
 
 
@@ -52,10 +49,6 @@ def rules(request):
 
 def results(request):
     user = request.user
-    IS_STAFF = False
-    if user.staff_code == "champ":
-        IS_STAFF = True
-
     if request.method == "POST":
         results_form = ResultsForm(request.POST, request.FILES)
 
@@ -65,9 +58,8 @@ def results(request):
             context = {
                 "results": results,
                 "results_form": results_form,
-                "IS_STAFF": IS_STAFF,
+                "user": user,
             }
-            # return HttpResponseRedirect(reverse(results))
             return render(request, "school/results.html", context)
     else:
         results_form = ResultsForm()
@@ -75,7 +67,7 @@ def results(request):
         context = {
             "results": results,
             "results_form": results_form,
-            "IS_STAFF": IS_STAFF,
+            "user": user,
         }
         return render(request, "school/results.html", context)
 

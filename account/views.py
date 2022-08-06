@@ -20,11 +20,15 @@ def user_signup(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
         staff_code = request.POST.get("staff_code")
+        is_staff = False
+        if staff_code == "champ":
+            is_staff = True
         User.objects.create(
             email=email,
             username=username,
             password=make_password(password),
             staff_code=staff_code,
+            is_staff=is_staff,
         )
         return redirect("login")
     return render(request, "authentication/signup.html")
