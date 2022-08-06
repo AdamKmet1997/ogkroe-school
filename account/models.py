@@ -38,6 +38,7 @@ class User(AbstractBaseUser):
     password = models.CharField(max_length=200)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
+    staff_code = models.CharField(max_length=200, unique=False, blank=False, default="")
 
     objects = AccountManager()
 

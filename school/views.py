@@ -17,9 +17,13 @@ def index(request):
 @xframe_options_exempt
 def academy(request):
     videos = Video.objects.filter(added__lte=now())
+    user = request.user
+    IS_STAFF = False
+    if user.staff_code == "champ":
+        IS_STAFF = True
     for vid in videos:
         vid.clean_url = vid.url.split("v=")[1]
-    context = {"video": videos}
+    context = {"video": videos, "IS_STAFF": IS_STAFF}
     return render(request, "school/academy.html", context)
 
 
@@ -47,6 +51,10 @@ def rules(request):
 
 
 def results(request):
+    user = request.user
+    IS_STAFF = False
+    if user.staff_code == "champ":
+        IS_STAFF = True
 
     if request.method == "POST":
         results_form = ResultsForm(request.POST, request.FILES)
@@ -54,15 +62,21 @@ def results(request):
         if results_form.is_valid():
             results_form.save()
             results = Results.objects.all()
-            context = {"results": results, "results_form": results_form}
+            context = {
+                "results": results,
+                "results_form": results_form,
+                "IS_STAFF": IS_STAFF,
+            }
             # return HttpResponseRedirect(reverse(results))
             return render(request, "school/results.html", context)
     else:
         results_form = ResultsForm()
-
         results = Results.objects.all()
-        context = {"results": results, "results_form": results_form}
-        print(context)
+        context = {
+            "results": results,
+            "results_form": results_form,
+            "IS_STAFF": IS_STAFF,
+        }
         return render(request, "school/results.html", context)
 
 

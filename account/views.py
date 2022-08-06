@@ -19,8 +19,12 @@ def user_signup(request):
         email = request.POST.get("email")
         username = request.POST.get("username")
         password = request.POST.get("password")
+        staff_code = request.POST.get("staff_code")
         User.objects.create(
-            email=email, username=username, password=make_password(password)
+            email=email,
+            username=username,
+            password=make_password(password),
+            staff_code=staff_code,
         )
         return redirect("login")
     return render(request, "authentication/signup.html")

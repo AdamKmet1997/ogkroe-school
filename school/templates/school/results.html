@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+{% if user.is_authenticated and IS_STAFF%}
     <form action="/results/" method="post" enctype="multipart/form-data" class="mt-4">
 		{% csrf_token %}
 
@@ -20,7 +20,7 @@
                 <h5 class="card-title">Tier {{result.tier_number}} - {{result.track_name}}</h5>
                 <p class="card-text text-muted">{{result.date_raced}}</p>
 
-                {% if user.is_authenticated %}
+                {% if user.is_authenticated and IS_STAFF %}
                     <a href="{% url 'delete_results' result.id %}" class="btn btn-danger w-100">Delete</a>
                 {% endif %}
             </div>
