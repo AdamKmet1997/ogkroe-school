@@ -40,9 +40,6 @@ def user_login(request):
         password = request.POST.get("password")
         user = authenticate(username=username, password=password)
         context["name"] = user
-        print(username)
-        print(password)
-        print(context)
         if user is not None:
             login(request, user)
             print("user is not None")
