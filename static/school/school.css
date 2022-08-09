@@ -146,3 +146,54 @@
         color: white;
         text-decoration: none;
     }
+    
+    .container-image {
+        background-image: url("Logo.png");
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 40em;
+        /* margin-left: 5em; */
+    }
+    
+    .welcome-text {
+        max-width: 30em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    
+    .w {
+        color: white;
+        display: inline;
+    }
+    
+    .o {
+        color: red;
+        display: inline;
+    }
+    
+    .g {
+        color: red;
+        display: inline;
+    }
+    
+    .k {
+        color: white;
+        display: inline;
+    }
+    
+    .r {
+        color: white;
+        display: inline;
+    }
+    
+    .o2 {
+        color: #205cf5;
+        display: inline;
+    }
+    
+    .e {
+        color: #205cf5;
+        display: inline;
+    }
