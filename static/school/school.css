@@ -147,24 +147,14 @@
         text-decoration: none;
     }
     
-    .container-image {
-        background-image: url("Logo.png");
+    .image {
+        background-image: url("ogkroe_logo.png");
         background-repeat: no-repeat;
-        width: 100%;
-        height: 40em;
-        /* margin-left: 5em; */
-    }
-    
-    .welcome-text {
-        max-width: 30em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
+        margin-left: 5em;
     }
     
     .w {
-        color: white;
+        color: black;
         display: inline;
     }
     
@@ -179,12 +169,12 @@
     }
     
     .k {
-        color: white;
+        color: orange;
         display: inline;
     }
     
     .r {
-        color: white;
+        color: orange;
         display: inline;
     }
     
