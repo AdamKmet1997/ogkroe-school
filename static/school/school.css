@@ -146,12 +146,11 @@
         color: white;
         text-decoration: none;
     }
-    
-    .image {
+    /* .image {
         background-image: url("ogkroe_logo.png");
         background-repeat: no-repeat;
         margin-left: 5em;
-    }
+    } */
     
     .w {
         color: black;
