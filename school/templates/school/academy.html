@@ -17,11 +17,9 @@
   >
     <div class="card-header">{{i.title}}</div>
 
-    <div class="card-body">
+    <div class="card-body embed-responsive embed-responsive-4by3">
       <p class="card-text">
-        <iframe
-          width="426"
-          height="240"
+        <iframe class="embed-responsive-item"
           src="https://www.youtube.com/embed/{{ i.clean_url }}"
         ></iframe>
       </p>
